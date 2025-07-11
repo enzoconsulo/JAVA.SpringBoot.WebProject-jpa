@@ -86,10 +86,6 @@ public class User implements Serializable{
 		return orders;
 	}
 
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-	}
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
