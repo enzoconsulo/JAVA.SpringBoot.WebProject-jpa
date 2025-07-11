@@ -1,12 +1,17 @@
 package com.enzoccs.SpringBootWebProject.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,6 +26,10 @@ public class User implements Serializable{
 	private String email;
 	private String phone;
 	private String password;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "client",fetch = FetchType.LAZY) //only loads when necessary (List of Order does not enter the User's memory. Loads only if was called for)
+	private List<Order> orders;
 	
 	public User() {
 	}
@@ -71,6 +80,14 @@ public class User implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 
 	@Override
