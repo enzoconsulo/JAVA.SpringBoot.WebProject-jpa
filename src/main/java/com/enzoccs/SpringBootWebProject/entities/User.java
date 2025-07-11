@@ -1,6 +1,7 @@
 package com.enzoccs.SpringBootWebProject.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -29,7 +30,7 @@ public class User implements Serializable{
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "client",fetch = FetchType.LAZY) //only loads when necessary (List of Order does not enter the User's memory. Loads only if was called for)
-	private List<Order> orders;
+	private List<Order> orders = new ArrayList<>();
 	
 	public User() {
 	}
