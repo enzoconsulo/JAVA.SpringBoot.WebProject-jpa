@@ -13,7 +13,7 @@ import com.enzoccs.SpringBootWebProject.entities.Category;
 import com.enzoccs.SpringBootWebProject.services.CategoryService;
 
 @RestController
-@RequestMapping(value = "/category")
+@RequestMapping(value = "/categories")
 public class CategoryResource {
 	
 	@Autowired
@@ -21,8 +21,8 @@ public class CategoryResource {
 	
 	@GetMapping
 	public ResponseEntity<List<Category>> findAll(){
-		List<Category> Categorys = service.findAll();
-		return ResponseEntity.ok().body(Categorys);
+		List<Category> Categories = service.findAll();
+		return ResponseEntity.ok().body(Categories);
 	}
 	
 	@GetMapping(value = "/{id}")
