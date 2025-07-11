@@ -23,7 +23,7 @@ public class TestConfig implements CommandLineRunner{
 		User u2 = new User(null, "Alex Green", "alex@gmail.com", "977777777", "123456"); 
 
 		userRepository.save(u1);
-		userRepository.save(u2).getId();
+		userRepository.save(u2);
 	}
 	
 	
