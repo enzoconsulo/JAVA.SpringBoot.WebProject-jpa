@@ -5,7 +5,6 @@ import java.util.Objects;
 
 import com.enzoccs.SpringBootWebProject.entities.Order;
 import com.enzoccs.SpringBootWebProject.entities.Product;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
