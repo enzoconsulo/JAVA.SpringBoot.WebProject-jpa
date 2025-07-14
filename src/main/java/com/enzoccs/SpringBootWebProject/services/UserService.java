@@ -23,7 +23,10 @@ public class UserService {
 	public User findById(Integer id) {
 		Optional<User> u = repository.findById(id);
 		return u.get();
-		
+	}
+	
+	public User insertUser(User u) {
+		return repository.save(u);
 	}
 
 }
