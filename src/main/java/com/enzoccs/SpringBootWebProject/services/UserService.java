@@ -11,10 +11,10 @@ import com.enzoccs.SpringBootWebProject.repositories.UserRepository;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	private UserRepository repository;
-	
+
 	public List<User> findAll() {
 		List<User> users = repository.findAll(); 
 		return users;
@@ -31,6 +31,18 @@ public class UserService {
 	
 	public void deleteUser(Integer id) {
 		repository.deleteById(id);
+	}
+	
+	public User updateUser(User u ,Integer id) {
+		User userToUpdate = repository.getReferenceById(id);
+		updateUser(userToUpdate,u);
+		return repository.save(userToUpdate);
+	}
+
+	private void updateUser(User userToUpdate,User updatedUser) {
+		userToUpdate.setEmail(updatedUser.getEmail());
+		userToUpdate.setName(updatedUser.getName());
+		userToUpdate.setPhone(updatedUser.getPhone());
 	}
 
 }
