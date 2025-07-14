@@ -10,10 +10,12 @@ import org.springframework.context.annotation.Profile;
 
 import com.enzoccs.SpringBootWebProject.entities.Category;
 import com.enzoccs.SpringBootWebProject.entities.Order;
+import com.enzoccs.SpringBootWebProject.entities.OrderItem;
 import com.enzoccs.SpringBootWebProject.entities.Product;
 import com.enzoccs.SpringBootWebProject.entities.User;
 import com.enzoccs.SpringBootWebProject.entities.enums.OrderStatus;
 import com.enzoccs.SpringBootWebProject.repositories.CategoryRepository;
+import com.enzoccs.SpringBootWebProject.repositories.OrderItemRepository;
 import com.enzoccs.SpringBootWebProject.repositories.OrderRepository;
 import com.enzoccs.SpringBootWebProject.repositories.ProductRepository;
 import com.enzoccs.SpringBootWebProject.repositories.UserRepository;
@@ -28,6 +30,9 @@ public class TestConfig implements CommandLineRunner{
 	
 	@Autowired
 	private OrderRepository orderRepository;
+	
+	@Autowired
+	private OrderItemRepository orderItemRepository;
 
 	@Autowired
 	private CategoryRepository categoryRepository;
@@ -70,5 +75,12 @@ public class TestConfig implements CommandLineRunner{
 		p5.addCategory(cat2);
 		
 		productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
+		
+		OrderItem oi1 = new OrderItem(o1, p1, 2, p1.getPrice());
+		OrderItem oi2 = new OrderItem(o1, p3, 1, p3.getPrice());
+		OrderItem oi3 = new OrderItem(o2, p3, 2, p3.getPrice());
+		OrderItem oi4 = new OrderItem(o3, p5, 2, p5.getPrice()); 
+		
+		orderItemRepository.saveAll(Arrays.asList(oi1,oi2,oi3,oi4));
 	}
 }
