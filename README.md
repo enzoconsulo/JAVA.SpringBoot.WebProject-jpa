@@ -2,7 +2,7 @@
 
 **Backend REST API built with Spring Boot 3.0, Java 17, and JPA/Hibernate**
 
-This project was developed as an academic exercise (see the [Project Specification](./EnunciadoDoProjeto.pdf)), focusing on backend concepts and API development.
+This project was developed as an academic exercise (see the [Project Specification](./ProjectSpecification.pdf)), focusing on backend concepts and API development.
 
 ## Overview
 
