@@ -45,11 +45,11 @@ This project was developed as an academic exercise (see the [Project Specificati
 1. **Initial Setup:** Created Maven project and added core dependencies.
 2. **User Entity & H2 Configuration:** Defined `User` entity and set up H2 test profile.
 3. **User CRUD:** Implemented repository, service, and controller; added data seeding.
-4. **Error Handling:** Introduced custom exceptions and a global exception handler.
-5. **Order Entity & OrderStatus:** Added `Order` entity with enum status and relationships.
-6. **Product & Category:** Modeled many-to-many relationship between products and categories.
-7. **OrderItem & Composite Key:** Implemented composite key for order items and subtotal logic.
-8. **Payment Entity:** Added one-to-one payment entity with cascade operations.
+4. **Order Entity & OrderStatus:** Added `Order` entity with enum status and relationships.
+5. **Product & Category:** Modeled many-to-many relationship between products and categories.
+6. **OrderItem & Composite Key:** Implemented composite key for order items and subtotal logic.
+7. **Payment Entity:** Added one-to-one payment entity with cascade operations.
+8. **Error Handling:** Introduced custom exceptions and a global exception handler.
 9. **Final Adjustments:** Tested all endpoints using Postman.
 
 ## Running the Application Locally
